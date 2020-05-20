@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="shortcut icon" type="image/x-icon" href="./Icon/Duck.ico" />
+  <title>Duck Hunt Game</title>
+  <link rel="stylesheet" href="./style.css" />
+
+  <audio autoplay loop>
+    <source src="./Sound/DuckHuntMedley.mp3" /> <!-- works on IE9+, FF3.5+, Chrome4+ -->
+    <!-- <source src="bgmusic.ogg" /> still needed for Safari 5.1.7, MP3 to OGG online converter here: http://audio.online-convert.com/convert-to-ogg -->
+  </audio>
+  <audio id="Shootaudio" src="./Sound/Pew_Pew_shoot.mp3"></audio>
+  <audio id="NextlevelSound" src="./Sound/Nice-work.mp3"></audio>
+
+</head>
+
+
+<body>
+
+  <div class="scoreContainer">
+    <div id="score-text">Score</div>
+    <div id="score-counter">0</div>
+  </div>
+
+
+  <!-- <button onclick="shootsound.play()"> Click Me </button> -->
+
+  <p>
+  <h1 class="winning">You Win Level 1!</h1>
+  </p>
+  <p>
+
+    <button class="nextlevel" id="NextlevelSound" onclick="window.location.href = 'indexlevel2.html';">Next
+      Level</button></p>
+
+
+
+  <script src="./AppLevel1.js"></script>
+
+
+</body>
+
+</html>

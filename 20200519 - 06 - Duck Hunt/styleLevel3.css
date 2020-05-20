@@ -1,0 +1,61 @@
+body {
+  background: #64b0ff url('./Picture/Scene/scene3.jpg') repeat-x fixed bottom;
+
+  height: 100vh;
+  width: 100vw;
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-size: cover; 
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.winning {
+  color: #FFF;
+  font-size: 6em;;
+  text-transform: uppercase;
+  opacity: 0;
+}
+
+
+.duck {
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* cursor: crosshair; */
+  cursor: cell;
+  position: absolute;
+  
+}
+
+
+
+/*Style for the Score container*/
+.scoreContainer {
+  background-color: black;
+  width: 13%;
+  height: 15%;
+  color: #ffffff;
+  top: 5%;
+  right: 5%;
+  border: 3px solid white;
+  border-radius: 10px;
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+ }
+
+ #score-text {
+  font-size: 2em;
+ }
+ 
+ #score-counter {
+  font-size: 3.1em;
+  font-weight: bold;
+  color: white;
+ }
