@@ -22,11 +22,14 @@
     document.body.appendChild(duckElem);
 
     //var widthofbird = Math.floor(Math.random() * 120);
-     // random duck sizes
+    // random duck sizes
     duckElem.style.width = random(60, 120) + 'px';
     duckElem.style.height = "120px";
 
-    return { duck, duckElem };
+    return {
+      duck,
+      duckElem
+    };
   }
 
 
@@ -108,9 +111,9 @@
         const nextlevelElem = document.querySelector(".nextlevel");
         const nextlevelElemvisible = document.querySelector(".nextlevel");
         winningElem.style.opacity = 1,
-        nextlevelElem.style.opacity = 1;
+          nextlevelElem.style.opacity = 1;
         nextlevelElemvisible.style.visibility = "visible";
-         
+
       }
     }, 2000);
   }
@@ -126,13 +129,31 @@
       duckElem
     }) => {
       duckElem.interval = setInterval(() => moveDuck(duckElem, duck), 80);
-      duckElem.addEventListener("click", shootDuck);
-      duckElem.addEventListener("click", Addscore);
-      duckElem.addEventListener("click", playshootsound);
+      // duckElem.addEventListener("click", shootDuck);
+      // duckElem.addEventListener("click", Addscore);
+      // duckElem.addEventListener("click", playshootsound);
+      duckElem.addEventListener("click", onDuckClicked);
 
 
 
     });
+
+  }
+
+  function onDuckClicked(event) {
+    const duckElem = event.currentTarget;
+
+    if (duckElem.getAttribute("clicked") == "true") {
+      console.log("Ignoring second click");
+      return;
+    }
+
+    duckElem.setAttribute("clicked", "true");
+
+    shootDuck(event);
+    Addscore(event);
+    playshootsound(event);
+
 
   }
 

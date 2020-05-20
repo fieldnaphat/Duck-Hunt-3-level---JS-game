@@ -122,14 +122,33 @@
       duckElem
     }) => {
       duckElem.interval = setInterval(() => moveDuck(duckElem, duck), 50);
-      duckElem.addEventListener("click", shootDuck);
-      duckElem.addEventListener("click", Addscore);
-      duckElem.addEventListener("click", playshootsound);
+           // duckElem.addEventListener("click", shootDuck);
+      // duckElem.addEventListener("click", Addscore);
+      // duckElem.addEventListener("click", playshootsound);
+      duckElem.addEventListener("click", onDuckClicked);
+
 
 
     });
+
   }
 
+  function onDuckClicked(event) {
+    const duckElem = event.currentTarget;
+
+    if (duckElem.getAttribute("clicked") == "true") {
+      console.log("Ignoring second click");
+      return;
+    }
+
+    duckElem.setAttribute("clicked", "true");
+
+    shootDuck(event);
+    Addscore(event);
+    playshootsound(event);
+
+
+  }
 
   run();
 
